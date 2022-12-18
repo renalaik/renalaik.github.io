@@ -1,33 +1,293 @@
-.body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+* {
     padding: 0;
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,calibri light,helvetica neue,sans-serif-light;
-    font-size: 14px;
-    letter-spacing: 1px;
+    box-sizing: border-box;
 }
 
-.navbar {
-      padding: 25px;
-      border: 2px solid;
-      color:  #117864;
-      font-size: 1.5em;
-      font-weight: 700;
-      text-transform: uppercase;
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.navbar-left {
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Header */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #000000;
+    box-shadow: 0 5px 15px rgb(207, 207, 207);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#logo {
+    color: white;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: teal;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: teal;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* End Header */
+
+/* Hero Section */
+
+#hero {
+    background-image: url(img/homepage.jpeg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+
+#hero .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero h1 {
     display: block;
-    float: left;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    padding-left: 50px;
-    border: 2px solid;
+    width: fit-content;
+    font-size: 4em;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
 }
 
-.navbar-right {
-    display: block;
-    float: right;
-    word-spacing: 5px;
-    letter-spacing: 3px;
-    padding-right: 50px;
+#hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(10, 128, 102);
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1s;
 }
+
+#hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(10, 128, 102);
+    background-color: transparent;
+    border: 2px solid rgb(10, 128, 102);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease background-color;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover {
+    color: white;
+    background-color: rgb(10, 128, 102);
+}
+
+/* End Hero Section */
+
+/* Services Section */
+
+    #services .services {
+        flex-direction: column;
+        text-align: center;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+
+    #services .services-title {
+        font-size: 4rem;
+        font-weight: 300;
+        color: black;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        text-align: center;
+    }
+    
+    #services .services-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #services .services-item {
+        flex-basis: 80%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 5%;
+    }
+
+    #services .services-item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .services .services-bottom .icon {
+        height: 250px;
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .icon p {
+        margin-top: 20px;
+        font-size: 15px;
+        letter-spacing: .1rem;
+    }
+
+    .icon h5 {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
+
+/* End Services Section */
+
+/* Footer */
+
+    #footer {
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    }
+
+    #footer .footer {
+        min-height: 200px;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    #footer .brand {
+        font-size: 2rem;
+	    text-transform: uppercase;
+	    color: white;
+    }
+
+    #footer h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #footer .social-icon {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    #footer .social-item {
+        height: 50px;
+        width: 50px;
+        margin: 0 5px;
+    }
+
+    #footer .social-item img {
+        filter: grayscale(1);
+        transition: 0.3s ease filter;
+    }
+    #footer .social-item:hover img {
+        filter: grayscale(0);
+    }
+    #footer p {
+        color: white;
+        font-size: 1.3rem;
+    }
+
+/* End Footer */
+
+/* Keyframes */
+    @keyframes text_reveal_box {
+        50% {
+            width: 100%;
+            left: 0;
+        }
+
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+    @keyframes text_reveal {
+        100% {
+            color: white;
+        }
+    }
+/* End Keyframes */
