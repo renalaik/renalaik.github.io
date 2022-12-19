@@ -1,87 +1,293 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/icon.png">
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-    <title> REINIGERJKT | Keep It Always Clean </title>
-</head>
-<body>
-    <!-- Header -->
-    <section id="header">
-        <a href="#"><h1 class="logo" id="logo"> REINIGERJKT </h1></a>
-        <!-- Navbar -->
-        <div>
-          <ul id="navbar">
-            <li><a href="index.html"> Home </a></li>
-            <li><a href="#services"> Services </a></li>
-            <li><a href="#footer"> Contact</a></li>
-          </ul>
-        </div>
-      </section>
-    <!-- End Header -->
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
 
-    <!-- Hero Section -->
-        <section id="hero">
-            <div class="hero container">
-                <div>
-                    <h1> Jasa Laundry dan Perawatan Sepatu <span></span></h1>
-                    <a href="#" type="button" class="cta"> Keep It Always Clean </a>
-                </div>
-            </div>
-        </section>
-     <!-- End Hero Section -->
+a {
+    text-decoration: none;
+}
 
-     <!-- Services Section -->
-        <section id="services">
-            <div class="services container">
-                <div class="services-top">
-                    <h1 class="services-title"> Services </h1>
-                </div>
-                <div class="services-bottom">
-                    <div class="services-item">
-                        <div class="icon"><img src="img/unyellowing.jpeg" alt="..."/>
-                            <p> UNYELLOWING </p>
-                            <h5> 100.000 </h5>
-                        </div>
-                    </div>
-                    <div class="services-item">
-                        <div class="icon"><img src="img/cleaning.jpeg" alt="..."/>
-                            <p> CLEANING </p>
-                            <h5> 75.000 </h5>
-                        </div>
-                    </div>
-                    <div class="services-item">
-                        <div class="icon"><img src="img/rewhitening.jpeg" alt="..."/>
-                            <p> REWHITENING </p>
-                            <h5> 100.000 </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-     <!-- End Services Section -->
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-     <!-- Footer -->
-        <section id="footer">
-            <div class="footer container">
-                <div class="brand"><h1> We Have All The Solutions to Your Shoe Problem </h1></div>
-                <h2> Contact Us </h2>
-                <div class="social-icon">
-                    <div class="social-item">
-                        <a href="https://www.instagram.com/reinigerjkt/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt="..."/></a>
-                    </div>
-                    <div class="social-item">
-                        <a href="https://api.whatsapp.com/send?phone=6289638662187&fbclid=PAAaa-gHr846DcCilqaZ3gHB2YE8LsW3VBWK237JIGOtLCnPfoXfjQjgmpy-w"><img src="https://img.icons8.com/bubbles/100/null/whatsapp.png" alt="..."/></a>
-                    </div>
-                </div>
-                <p> Copyright © 2021 REINIGERJKT. All rights reserved </p>
-            </div>
-        </section>
-     <!-- End Footer -->
-</body>
-</html>
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Header */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #000000;
+    box-shadow: 0 5px 15px rgb(207, 207, 207);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#logo {
+    color: white;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: teal;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: teal;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* End Header */
+
+/* Hero Section */
+
+#hero {
+    background-image: url(img/homepage.jpeg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+
+#hero .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4em;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(10, 128, 102);
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1s;
+}
+
+#hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(10, 128, 102);
+    background-color: transparent;
+    border: 2px solid rgb(10, 128, 102);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease background-color;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover {
+    color: white;
+    background-color: rgb(10, 128, 102);
+}
+
+/* End Hero Section */
+
+/* Services Section */
+
+    #services .services {
+        flex-direction: column;
+        text-align: center;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+
+    #services .services-title {
+        font-size: 4rem;
+        font-weight: 300;
+        color: black;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        text-align: center;
+    }
+    
+    #services .services-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #services .services-item {
+        flex-basis: 80%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 5%;
+    }
+
+    #services .services-item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .services .services-bottom .icon {
+        height: 250px;
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .icon p {
+        margin-top: 20px;
+        font-size: 15px;
+        letter-spacing: .1rem;
+    }
+
+    .icon h5 {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
+
+/* End Services Section */
+
+/* Footer */
+
+    #footer {
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    }
+
+    #footer .footer {
+        min-height: 200px;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    #footer .brand {
+        font-size: 2rem;
+	    text-transform: uppercase;
+	    color: white;
+    }
+
+    #footer h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #footer .social-icon {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    #footer .social-item {
+        height: 50px;
+        width: 50px;
+        margin: 0 5px;
+    }
+
+    #footer .social-item img {
+        filter: grayscale(1);
+        transition: 0.3s ease filter;
+    }
+    #footer .social-item:hover img {
+        filter: grayscale(0);
+    }
+    #footer p {
+        color: white;
+        font-size: 1.3rem;
+    }
+
+/* End Footer */
+
+/* Keyframes */
+    @keyframes text_reveal_box {
+        50% {
+            width: 100%;
+            left: 0;
+        }
+
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+    @keyframes text_reveal {
+        100% {
+            color: white;
+        }
+    }
+/* End Keyframes */
